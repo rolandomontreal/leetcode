@@ -15,6 +15,11 @@ func Test_romanToInt(t *testing.T) {
 		{ name: "1 hundred", s: "C", expected: 100, },
 		{ name: "5 hundred", s: "D", expected: 500, },
 		{ name: "1 thousand", s: "M", expected: 1000, },
+		{ name: "Three", s: "III", expected: 3, },
+		{ name: "Fifty eight", s: "LVIII", expected: 58, },
+		{ name: "Four", s: "IV", expected: 4, },
+		{ name: "Nine", s: "IX", expected: 9, },
+		{ name: "1994", s: "MCMXCIV", expected: 1994, },
 	}
 	for _, tc := range romanToIntTests {
 		result := romanToInt(tc.s)

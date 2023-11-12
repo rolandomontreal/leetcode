@@ -8,19 +8,30 @@ func main() {
 }
 
 func romanToInt(s string) int {
-	// sum := 0;
-
 	if (len(s) == 1) {
 		return singleRomanToInt(s)
 	}
 
-	// for i := 0; i < len(s) + 1; i++ {
-	// 	c1 := str[i:i+1]
-	// 	c2 := str[i+1:i+2]
-	// 	n1 := singleRomanToInt()
-	// }
+	sum := 0;
 
-	return -1
+	for i := 0; i < len(s); i++ {
+		c1 := s[i:i+1]
+		n1 := singleRomanToInt(c1)
+		if (i == len(s) - 1) {
+			sum += n1
+		} else {
+			c2 := s[i+1:i+2]
+			n2 := singleRomanToInt(c2)
+			if (n1 < n2) {
+				sum = sum + (n2 - n1)
+				i++
+			} else {
+				sum = sum + n1
+			}
+		}
+	}
+
+	return sum
 }
 
 func singleRomanToInt(s string) int {
