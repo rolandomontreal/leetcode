@@ -8,13 +8,13 @@ func Test_romanToInt(t *testing.T) {
 		s string
 		expected int
 	}{
-		{ name: "One", s: "I", expected: 1, },
-		{ name: "Five", s: "V", expected: 5, },
-		{ name: "Ten", s: "X", expected: 10, },
-		{ name: "Fifty", s: "L", expected: 50, },
-		{ name: "1 hundred", s: "C", expected: 100, },
-		{ name: "5 hundred", s: "D", expected: 500, },
-		{ name: "1 thousand", s: "M", expected: 1000, },
+		{ name: "1", s: "I", expected: 1, },
+		{ name: "5", s: "V", expected: 5, },
+		{ name: "10", s: "X", expected: 10, },
+		{ name: "50", s: "L", expected: 50, },
+		{ name: "100", s: "C", expected: 100, },
+		{ name: "500", s: "D", expected: 500, },
+		{ name: "1000", s: "M", expected: 1000, },
 		{ name: "Three", s: "III", expected: 3, },
 		{ name: "Fifty eight", s: "LVIII", expected: 58, },
 		{ name: "Four", s: "IV", expected: 4, },
