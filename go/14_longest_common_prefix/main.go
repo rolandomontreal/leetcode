@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	strs := []string{"flower", "flow", "flight"}
+	strs := []string{"a"}
 	res := longestCommonPrefix(strs)
 	fmt.Println("Result from comparison:", res)
 }
@@ -24,17 +24,14 @@ func longestCommonPrefix(strs []string) string {
 		c1 := strs[0][i:i+1]
 		for _, str := range strs {
 			cx := str[i:i+1]
-			fmt.Printf("Comparing '%s' to '%s'", c1, cx)
+			lenLongestPrefix = i + 1
 			if (c1 != cx) {
-				fmt.Println("NO MATCH, stopping comparison")
 				longestPrefixFound = true
-				lenLongestPrefix = i
+				lenLongestPrefix -= 1
 				break
 			}
 		}
 	}
-
-	fmt.Println("Result: ", longestPrefixFound, lenLongestPrefix)
 
 	return strs[0][0:lenLongestPrefix]
 }
